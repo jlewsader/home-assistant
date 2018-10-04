@@ -1,0 +1,158 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Waterfront Acres
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secrets home_latitude
+  longitude: !secrets home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secrets home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Indiana/Indianapolis
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+panel_iframe:
+  router:
+    title: Router
+    icon: mdi:router-wireless
+    url: http://192.168.1.1
+
+# Discover some devices automatically
+discovery:
+
+# HomeKit
+# homekit:
+#   auto_start: false
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+recorder:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+#map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+#cloud:
+
+# Alexa
+emulated_hue:
+  #listen_port: 80
+  expose_by_default: false
+  # exposed_domains:
+  #   - light
+  # entities:
+  #   light.
+  #     name:
+
+# Cast
+cast:
+
+# Weather
+weather:
+  - platform: darksky
+    api_key: !secrets darksky_key
+
+# Ecobee
+ecobee:
+  api_key: !secrets ecobee_key
+  hold_temp: True
+
+# Harmony remote
+remote:
+  - platform: harmony
+    name: Harmony Hub
+    host: 192.168.1.133
+
+# Life360
+device_tracker:
+  - platform: life360
+    username: !secrets life360_user
+    password: !secrets life360_password
+    interval_seconds: 10
+    show_as_state: places, driving, moving
+
+# Media Player
+media_player:
+# Bedroom Samsung TV -- Our current model only supports power status :(
+  # - platform: samsungtv
+  #   host: 192.168.1.140
+  #   mac: 54:88:0E:25:9C:AF
+# DirecTV
+  - platform: directv
+    host: 192.168.1.110
+    name: Living Room DirecTV
+    device: 0
+  - platform: directv
+    host: 192.168.1.110
+    name: Bedroom DirecTV
+    device: 403DEC0C6CF2
+  - platform: directv
+    host: 192.168.1.110
+    name: Kids Room DirecTV
+    device: 403DEC0C603C
+# Universal Media Player (Bedroom TV)
+  # - platform: universal
+  #   name: Bedroom TV
+  #   children:
+  #     - media_player.bedroom_directv
+  #     - media_player.samsung_tv_remote
+  #   commands:
+  #     turn_on:
+  #       service: script.turn_on
+  #       entity_id: script.bedroom_tv_on
+  #     # turn_off: media_player.turn_off
+  #     #   service: script.turn_on
+  #     #   entity_id: script.bedroom_tv_off
+  #   attributes:
+  #     state: media_player.bedroom_directv
+
+sensor:
+  - platform: template
+    sensors:
+      livingroomremote:
+        value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
+        friendly_name: 'Living Room Remote'
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+input_select: !include input_select.yaml
+input_boolean: !include input_boolean.yaml
+input_number: !include input_number.yaml

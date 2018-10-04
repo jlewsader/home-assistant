@@ -1,0 +1,13 @@
+livingroomharmony:
+  name: Harmony Activity
+  options:
+   - PowerOff
+   - Watch TV
+   - Watch Netflix
+   - Watch a Movie
+   - Play Xbox One
+   - Listen to Music
+   - Cast
+  initial: PowerOff
+  icon: mdi:television
+

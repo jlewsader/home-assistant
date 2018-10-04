@@ -1,0 +1,188 @@
+resources:
+  - url: /local/mini-media-player.js
+    type: js
+  - url: /local/thermostat-card/thermostat-card.js?v=1
+    type: module
+  - url: /local/entity-attributes-card/entity-attributes-card.js?v=1
+    type: module
+
+title: Waterfront Acres
+views:
+### Home ###
+  - title: Home
+    id: home
+    icon: mdi:home-assistant
+    badges:
+        # - sensor.thermostat_temperature
+    cards:
+      ### Whos Home ###
+      - type: entity-filter
+        entities:
+          - device_tracker.heather
+          - device_tracker.justin_lewsader
+        state_filter:
+          - home
+        card:
+            type: glance
+            title: Who's Home
+            show_name: false
+            show_state: false
+
+      ## Favorites ###
+      - type: glance
+        title: Favorites
+        column_width: calc(100%/3)
+        entities:
+          - entity: input_select.livingroomharmony
+            name: LR TV
+          - entity: media_player.bedroom_directv
+            name: BR TV
+            icon: mdi:television
+          - entity: media_player.kids_room_directv
+            name: Kid's TV
+            icon: mdi:television
+
+
+      ### Thermostat ###
+      - type: vertical-stack
+        cards:
+          # - type: glance
+          #   title: Thermostat
+          #   column_width: calc(100%/3)
+          #   entities:
+          #    - entity: sensor.thermostat_temperature
+          #      name: Thermostat
+          #    - entity: sensor.lil_bee_temperature
+          #      name: Sensor
+          #    - entity: sensor.thermostat_humidity
+          #      name: Humidity
+          - type: entities
+            entities:
+              - entity: climate.thermostat
+                #name:
+              - entity: sensor.thermostat_temperature
+                name: Indoor Temp.
+              - entity: sensor.lil_bee_temperature
+                name: Sensor Temp.
+              - entity: sensor.thermostat_humidity
+                name: Indoor Humidity
+          ### Forecast ###
+          - type: weather-forecast
+            entity: weather.dark_sky
+
+### Media ###
+  - title: Media
+    id: media
+    icon: mdi:television-classic
+    cards:
+      - type: vertical-stack
+        cards:
+          ### Living Room ###
+            - type: entities
+              title: Living Room
+              entities:
+                - entity: input_select.livingroomharmony
+                  name: Activities
+                - entity: media_player.living_room_directv
+                  icon: mdi:television-box
+                  type: "custom:mini-media-player"
+                  group: true
+                - type: custom:entity-attributes-card
+                  entity: media_player.living_room_directv
+                  filter:
+                    include:
+                      - key: media_player.living_room_directv.media_channel
+                        name: Channel
+                      - key: media_player.living_room_directv.media_title
+                        name: Show
+                      - key: media_player.living_room_directv.media_series_title
+                        name: Title
+
+            ### Master Bedroom ###
+            - type: entities
+              title: Master Bedroom
+              entities:
+                - entity: media_player.bedroom_directv
+                  icon: mdi:television-box
+                  type: "custom:mini-media-player"
+                  group: true
+                - type: custom:entity-attributes-card
+                  entity: media_player.bedroom_directv
+                  filter:
+                    include:
+                      - key: media_player.bedroom_directv.media_channel
+                        name: Channel
+                      - key: media_player.bedroom_directv.media_title
+                        name: Show
+                      - key: media_player.bedroom_directv.media_series_title
+                        name: Title
+
+
+            ### Kids Room ###
+            - type: entities
+              title: Kid's Room
+              entities:
+                - entity: media_player.kids_room_directv
+                  icon: mdi:television-box
+                  type: "custom:mini-media-player"
+                  group: true
+                - type: custom:entity-attributes-card
+                  entity: media_player.kids_room_directv
+                  filter:
+                    include:
+                      - key: media_player.kids_room_directv.media_channel
+                        name: Channel
+                      - key: media_player.kids_room_directv.media_title
+                        name: Show
+                      - key: media_player.kids_room_directv.media_series_title
+                        name: Title
+
+
+      - type: entities
+        title: Cast Devices
+        entities:
+          - entity: media_player.living_room__speaker
+            type: "custom:mini-media-player"
+            group: true
+          - entity: media_player.living_room_tv
+            type: "custom:mini-media-player"
+            group: true
+          - entity: media_player.soundbar
+            type: "custom:mini-media-player"
+            group: true
+          - entity: media_player.master_bedroom_speaker
+            type: "custom:mini-media-player"
+            group: true
+          - entity: media_player.bedroom
+            type: "custom:mini-media-player"
+            group: true
+          - entity: media_player.kitchen_speaker
+            type: "custom:mini-media-player"
+            group: true
+          - entity: media_player.all_speakers
+            type: "custom:mini-media-player"
+            group: true
+
+### Weather ###
+  - title: Weather
+    id: weather
+    icon: mdi:weather-partlycloudy
+    panel: true
+    cards:
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=40.044&lon=-86.572&zoom=6&level=surface&overlay=radar&menu=&message=true&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&detailLat=38.578&detailLon=-90.667&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1
+        aspect_ratio: 100%
+
+
+### Map ###
+  - title: Map
+    id: map
+    icon: mdi:map-marker
+    panel: true
+    cards:
+    - type: map
+      default_zoom: 13
+      entities:
+        - device_tracker.justin_lewsader
+        - device_tracker.heather
+        - zone.home

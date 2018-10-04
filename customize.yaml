@@ -1,0 +1,6 @@
+weather.thermostat:
+  friendly_name: Weather
+device_tracker.justin_lewsader:
+ entity_picture: https://www.life360.com/img/user_images/cccf0d72-2d9d-4e54-898b-4378875436d6/1bb75825-cbe6-4d8e-9916-942a300f5ecd.jpg?fd=2
+weather.dark_sky:
+  friendly_name: Weather
