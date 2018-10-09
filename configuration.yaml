@@ -131,17 +131,3 @@ media_player:
   #     #   entity_id: script.bedroom_tv_off
   #   attributes:
   #     state: media_player.bedroom_directv
-
-sensor:
-  - platform: template
-    sensors:
-      livingroomremote:
-        value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
-        friendly_name: 'Living Room Remote'
-
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-input_select: !include input_select.yaml
-input_boolean: !include input_boolean.yaml
-input_number: !include input_number.yaml

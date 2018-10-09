@@ -1,0 +1,98 @@
+###############################################################################
+#   @package        :   Harmony TV Activity Control
+#   @description    :   Control Harmony TV Activities - No Longer Used
+#   @url            :
+###############################################################################
+
+group:
+  harmonytv:
+    control: hidden
+    name: Harmony Remote
+    entities:
+      - sensor.harmony_activity
+      - input_select.harmony
+
+input_select:
+  harmony:
+    name: Harmony Control
+    options:
+      - Select Input
+      - Watch TV
+      - Watch Netflix
+      - Watch a Movie
+      - Play Xbox One
+      - Listen to Music
+      - Cast
+      - Power Off
+    initial: Select Input
+    icon: mdi:remote
+
+sensor:
+  - platform: template
+    sensors:
+      harmony_activity:
+        friendly_name: 'Harmony Activity'
+        value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
+        icon_template: >-
+          {% if is_state("sensor.harmony_activity", "Watch TV") %}
+            mdi:television-box
+          {% elif is_state("sensor.harmony_activity", "Watch Netflix") %}
+            mdi:netflix
+          {% elif is_state("sensor.harmony_activity", "Watch a Movie") %}
+            mdi:movie
+          {% elif is_state("sensor.harmony_activity", "Play Xbox One") %}
+            mdi:xbox
+          {% elif is_state("sensor.harmony_activity", "Listen to Music") %}
+            mdi:record-player
+          {% elif is_state("sensor.harmony_activity", "Cast") %}
+            mdi:cast
+          {% else %}
+            mdi:monitor
+          {% endif %}
+###############################################################################
+#                               Automations
+###############################################################################
+automation:
+  - alias: Start Harmony Activity
+    hide_entity: True
+    trigger:
+    - platform: state
+      entity_id: input_select.harmony
+      from: 'Select Input'
+    action:
+    - service: remote.turn_on
+      entity_id: remote.harmony_hub
+      data_template:
+        activity: >
+          {% if is_state("input_select.harmony", "Watch TV") %}
+            22985196
+          {% elif is_state("input_select.harmony", "Watch Netflix") %}
+            28656554
+          {% elif is_state("input_select.harmony", "Watch a Movie") %}
+            22985982
+          {% elif is_state("input_select.harmony", "Play Xbox One") %}
+            22985907
+          {% elif is_state("input_select.harmony", "Listen to Music") %}
+            28806653
+          {% elif is_state("input_select.harmony", "Cast") %}
+            33003021
+          {% else %}
+          {% endif %}
+    - service: input_select.select_option
+      entity_id: input_select.harmony
+      data_template:
+        option: "Select Input"
+
+  - alias: Stop Harmony Activity
+    hide_entity: True
+    trigger:
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'Power Off'
+    action:
+    - service: remote.turn_off
+      entity_id: remote.harmony_hub
+    - service: input_select.select_option
+      entity_id: input_select.harmony
+      data_template:
+        option: "Select Input"
