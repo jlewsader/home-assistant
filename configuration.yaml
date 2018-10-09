@@ -96,25 +96,3 @@ device_tracker:
     password: !secrets life360_password
     interval_seconds: 10
     show_as_state: places, driving, moving
-
-# Media Player
-media_player:
-# Bedroom Samsung TV -- Our current model only supports power status :(
-  # - platform: samsungtv
-  #   host: 192.168.1.140
-  #   mac: 54:88:0E:25:9C:AF
-# Universal Media Player (Bedroom TV)
-  # - platform: universal
-  #   name: Bedroom TV
-  #   children:
-  #     - media_player.bedroom_directv
-  #     - media_player.samsung_tv_remote
-  #   commands:
-  #     turn_on:
-  #       service: script.turn_on
-  #       entity_id: script.bedroom_tv_on
-  #     # turn_off: media_player.turn_off
-  #     #   service: script.turn_on
-  #     #   entity_id: script.bedroom_tv_off
-  #   attributes:
-  #     state: media_player.bedroom_directv
