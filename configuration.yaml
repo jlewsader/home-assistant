@@ -103,19 +103,6 @@ media_player:
   # - platform: samsungtv
   #   host: 192.168.1.140
   #   mac: 54:88:0E:25:9C:AF
-# DirecTV
-  - platform: directv
-    host: 192.168.1.110
-    name: Living Room DirecTV
-    device: 0
-  - platform: directv
-    host: 192.168.1.110
-    name: Bedroom DirecTV
-    device: 403DEC0C6CF2
-  - platform: directv
-    host: 192.168.1.110
-    name: Kids Room DirecTV
-    device: 403DEC0C603C
 # Universal Media Player (Bedroom TV)
   # - platform: universal
   #   name: Bedroom TV
