@@ -5,12 +5,12 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: imperial
   time_zone: America/Indiana/Indianapolis
-# Customization
-  customize: !include includes/customize.yaml
 # Include Packages
   packages: !include_dir_named packages
-# Single Files
-  group: !include includes/group.yaml
+
+# Customization
+  customize: !include includes/customize.yaml
+
 
 # Enables the frontend
 frontend:
@@ -107,3 +107,6 @@ device_tracker:
     password: !secret life360_password
     interval_seconds: 10
     show_as_state: places, driving, moving
+
+# Single Files
+  group: !include includes/group.yaml
