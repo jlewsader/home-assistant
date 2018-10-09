@@ -33,7 +33,7 @@ views:
         title: Favorites
         column_width: calc(100%/3)
         entities:
-          - entity: group.harmonytv
+          - entity: sensor.harmony_activity
             name: LR TV
           - entity: media_player.bedroom_directv
             name: BR TV
