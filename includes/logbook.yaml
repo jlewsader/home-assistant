@@ -1,0 +1,21 @@
+############################################################
+#
+# Home Assistant Log Book
+#
+############################################################
+
+include:
+  entities:
+    - sensor.harmony_activity
+    - media_player.living_room_directv
+    - media_player.bedroom_directv
+    - media_player.kids_room_directv
+    - sensor.thermostat_temperature
+    - sensor.thermostat_humidity
+    - sensor.lil_bee_temperature
+    - sensor.weather_summary
+    - sensor.weather_temperature
+    - sensor.weather_precip_intensity
+    - sensor.weather_humidity
+  domains:
+    - sun
