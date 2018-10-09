@@ -5,7 +5,7 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: imperial
   time_zone: America/Indiana/Indianapolis
-# Include Packages
+  # Include Packages
   packages: !include_dir_named packages
 
 # Customization
@@ -38,7 +38,7 @@ panel_iframe:
     url: http://192.168.1.1
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # HomeKit
 # homekit:
@@ -61,10 +61,10 @@ logbook: !include includes/logbook.yaml
 sun:
 
 sensor:
-- platform: time_date
-  display_options:
-    - 'time'
-    - 'date'
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
 
 # iOS App
 ios:
@@ -109,4 +109,4 @@ device_tracker:
     show_as_state: places, driving, moving
 
 # Single Files
-  group: !include includes/group.yaml
+group: !include includes/group.yaml
