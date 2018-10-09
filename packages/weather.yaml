@@ -11,7 +11,7 @@ homeassistant:
 sensor:
 
   - platform: darksky
-    api_key: !secrets darksky_key
+    api_key: !secret darksky_key
     update_interval: '00:05:00'
     name: Weather
     monitored_conditions:
@@ -44,4 +44,4 @@ sensor:
 weather:
   - platform: darksky
     name: Forecast
-    api_key: !secrets darksky_key
+    api_key: !secret darksky_key
