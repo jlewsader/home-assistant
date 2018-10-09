@@ -6,9 +6,11 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Indiana/Indianapolis
 # Customization
-  customize: !include customize.yaml
+  customize: !include includes/customize.yaml
 # Include Packages
   packages: !include_dir_named packages
+# Single Files
+  group: !include includes/group.yaml
 
 # Enables the frontend
 frontend:
