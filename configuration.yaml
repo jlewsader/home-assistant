@@ -1,8 +1,8 @@
 homeassistant:
   name: Waterfront Acres
-  latitude: !secrets home_latitude
-  longitude: !secrets home_longitude
-  elevation: !secrets home_elevation
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
   unit_system: imperial
   time_zone: America/Indiana/Indianapolis
 # Customization
@@ -89,7 +89,7 @@ cast:
 
 # Ecobee
 ecobee:
-  api_key: !secrets ecobee_key
+  api_key: !secret ecobee_key
   hold_temp: True
 
 # Harmony remote
@@ -101,7 +101,7 @@ remote:
 # Life360
 device_tracker:
   - platform: life360
-    username: !secrets life360_user
-    password: !secrets life360_password
+    username: !secret life360_user
+    password: !secret life360_password
     interval_seconds: 10
     show_as_state: places, driving, moving
