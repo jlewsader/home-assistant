@@ -15,18 +15,14 @@ views:
     badges:
         # - sensor.thermostat_temperature
     cards:
-      ### Whos Home ###
-      - type: entity-filter
+      ### Devices ###
+      - type: glance
+        title: People
         entities:
-          - device_tracker.heather
-          - device_tracker.justin_lewsader
-        state_filter:
-          - home
-        card:
-            type: glance
-            title: Who's Home
+          - entity: device_tracker.heather
             show_name: false
-            show_state: false
+          - entity: device_tracker.justin_lewsader
+            show_name: false
 
       ## Favorites ###
       - type: glance
