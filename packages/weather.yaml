@@ -47,3 +47,4 @@ sensor:
 
 weather:
   - platform: yweather
+    name: Forecast
