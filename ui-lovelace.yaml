@@ -18,11 +18,10 @@ views:
       ### Devices ###
       - type: glance
         title: People
+        show_name: false
         entities:
-          - entity: device_tracker.heather
-            show_name: false
-          - entity: device_tracker.justin_lewsader
-            show_name: false
+          - device_tracker.heather
+          - device_tracker.justin_lewsader
 
       ## Favorites ###
       - type: glance
