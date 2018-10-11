@@ -23,6 +23,7 @@ input_select:
       - Play Xbox One
       - Listen to Music
       - Cast
+      - Raspberry Pi
       - Power Off
     initial: Select Input
     icon: mdi:remote
@@ -46,6 +47,8 @@ sensor:
             mdi:record-player
           {% elif is_state("sensor.harmony_activity", "Cast") %}
             mdi:cast
+          {% elif is_state("sensor.harmony_activity", "Raspberry Pi") %}
+            mdi:server
           {% else %}
             mdi:monitor
           {% endif %}
@@ -76,6 +79,8 @@ automation:
             28806653
           {% elif is_state("input_select.harmony", "Cast") %}
             33003021
+          {% elif is_state("input_select.harmony", "Raspberry Pi") %}
+            35895838
           {% else %}
           {% endif %}
     - service: input_select.select_option
