@@ -17,7 +17,8 @@ input_select:
     name: Harmony Control
     options:
       - Select Input
-      - Watch TV
+      - Watch DirecTV
+      # - WatchFree
       - Watch Netflix
       - Watch a Movie
       - Play Xbox One
@@ -35,8 +36,10 @@ sensor:
         friendly_name: 'Harmony Activity'
         value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
         icon_template: >-
-          {% if is_state("sensor.harmony_activity", "Watch TV") %}
+          {% if is_state("sensor.harmony_activity", "Watch DirecTV") %}
             mdi:television-box
+#          {% if is_state("sensor.harmony_activity", "WatchFree") %}
+#            mdi:television-guide
           {% elif is_state("sensor.harmony_activity", "Watch Netflix") %}
             mdi:netflix
           {% elif is_state("sensor.harmony_activity", "Watch a Movie") %}
@@ -67,8 +70,10 @@ automation:
       entity_id: remote.harmony_hub
       data_template:
         activity: >
-          {% if is_state("input_select.harmony", "Watch TV") %}
+          {% if is_state("input_select.harmony", "Watch DirecTV") %}
             22985196
+#          {% if is_state("input_select.harmony", "WatchFree") %}
+#            22985196
           {% elif is_state("input_select.harmony", "Watch Netflix") %}
             28656554
           {% elif is_state("input_select.harmony", "Watch a Movie") %}
