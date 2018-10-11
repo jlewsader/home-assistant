@@ -108,5 +108,12 @@ device_tracker:
     interval_seconds: 10
     show_as_state: places, driving, moving
 
+# Zones
+zone:
+  name: !secret zone_name
+  latitude: !secret zone_latitude
+  longitude: !secret zone_longitude
+  radius: 200
+
 # Single Files
 group: !include includes/group.yaml
