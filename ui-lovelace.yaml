@@ -47,13 +47,17 @@ views:
                 #name:
               - entity: sensor.thermostat_temperature
                 name: Indoor Temp.
+              - entity: sensor.weather_temperature
+                name: Outdoor Temp.
               - entity: sensor.lil_bee_temperature
-                name: Sensor Temp.
+                name: Kid's Room Temp.
               - entity: sensor.thermostat_humidity
                 name: Indoor Humidity
+              - entity: sensor.weather_humidity
+                name: Outdoor Humidity
           ### Forecast ###
           - type: weather-forecast
-            entity: weather.yweather
+            entity: weather.forecast
 
 ### Media ###
   - title: Media
