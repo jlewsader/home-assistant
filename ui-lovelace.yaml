@@ -58,7 +58,7 @@ views:
                 name: Indoor Humidity
           ### Forecast ###
           - type: weather-forecast
-            entity: weather.forecast
+            entity: weather.yweather
 
 ### Media ###
   - title: Media
