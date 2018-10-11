@@ -1,2 +1,5 @@
 device_tracker.justin_lewsader:
  entity_picture: /local/justin_bitmoji.jpg
+
+media_player.googlehome0358:
+  name: Kid's Room Speaker
