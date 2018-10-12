@@ -113,6 +113,7 @@ device_tracker:
 
 # Zwave
 zwave:
+  usb_path: /dev/ttyACM0
 
 # Zones
 zone:
