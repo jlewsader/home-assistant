@@ -147,7 +147,7 @@ views:
         title: Speakers
         entities:
           - entity: media_player.kitchen_speaker
-            type: "custom:ini-media-player"
+            type: "custom:mini-media-player"
           - media_player.living_room__speaker
           - media_player.soundbar
           - media_player.googlehome0358
