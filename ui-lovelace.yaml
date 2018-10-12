@@ -128,19 +128,13 @@ views:
                       - key: media_player.kids_room_directv.media_series_title
                         name: Title
 
-      - type: entity-filter
+      - type: entities
+        name: Speakers
         entities:
           - media_player.kitchen_speaker
           - media_player.living_room__speaker
           - media_player.soundbar
           - media_player.googlehome0358
-        state_filter:
-          - playing
-          - paused
-        card:
-          type: glance
-          title: Speakers
-          # show_state: false
 
 ### Weather ###
   - title: Weather
