@@ -128,31 +128,19 @@ views:
                       - key: media_player.kids_room_directv.media_series_title
                         name: Title
 
-
-      - type: entities
-        title: Cast Devices
+      - type: entity-filter
         entities:
-          - entity: media_player.living_room__speaker
-            type: "custom:mini-media-player"
-            group: true
-          - entity: media_player.living_room_tv
-            type: "custom:mini-media-player"
-            group: true
-          - entity: media_player.soundbar
-            type: "custom:mini-media-player"
-            group: true
-          - entity: media_player.master_bedroom_speaker
-            type: "custom:mini-media-player"
-            group: true
-          - entity: media_player.bedroom
-            type: "custom:mini-media-player"
-            group: true
-          - entity: media_player.kitchen_speaker
-            type: "custom:mini-media-player"
-            group: true
-          - entity: media_player.all_speakers
-            type: "custom:mini-media-player"
-            group: true
+          - media_player.kitchen_speaker
+          - media_player.living_room__speaker
+          - media_player.soundbar
+          - media_player.googlehome0358
+        state_filter:
+          - playing
+          - paused
+        card:
+          type: glance
+          title: Speakers
+          # show_state: false
 
 ### Weather ###
   - title: Weather
