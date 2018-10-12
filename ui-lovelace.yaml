@@ -19,6 +19,7 @@ views:
       - type: glance
         title: People
         show_name: false
+        column_width: calc(100%/2)
         entities:
           - device_tracker.heather
           - device_tracker.justin_lewsader
