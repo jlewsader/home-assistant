@@ -31,10 +31,10 @@ views:
         entities:
           - entity: sensor.harmony_activity
             name: LR TV
-            tap_action: call-service
-            service: input_select.select_next
-            service_data:
-              entity_id: input_select.harmony
+            # tap_action: call-service
+            # service: input_select.select_next
+            # service_data:
+            #   entity_id: input_select.harmony
           - entity: media_player.bedroom_directv
             name: BR TV
             icon: mdi:television
