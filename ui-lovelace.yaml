@@ -41,6 +41,10 @@ views:
           - entity: media_player.kids_room_directv
             name: Kid's TV
             icon: mdi:television
+
+      ## Scripts ###
+      - type: glance
+        entities:
           - entity: script.dinner_notify
             name: Dinner Announcement
             icon: mdi:food
