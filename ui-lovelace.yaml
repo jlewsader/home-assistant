@@ -15,49 +15,51 @@ views:
     badges:
         # - sensor.thermostat_temperature
     cards:
-      ### Devices ###
-      - type: glance
-        title: People
-        show_name: false
-        column_width: calc(100%/2)
-        entities:
-          - device_tracker.heather
-          - device_tracker.justin_lewsader
-
-      ## Favorites ###
-      - type: glance
-        title: Favorites
-        column_width: calc(100%/3)
-        entities:
-          - entity: sensor.harmony_activity
-            name: LR TV
-            # tap_action: call-service
-            # service: input_select.select_next
-            # service_data:
-            #   entity_id: input_select.harmony
-          - entity: media_player.bedroom_directv
-            name: BR TV
-            icon: mdi:television
-          - entity: media_player.kids_room_directv
-            name: Kid's TV
-            icon: mdi:television
-
-      ## Scripts ###
-      - type: glance
-        entities:
-          - entity: script.dinner_notify
-            name: Dinner Announcement
-            icon: mdi:food
-            tap_action: call-service
-            service: script.dinner_notify
-
-      ### Thermostat ###
       - type: vertical-stack
         cards:
+          ### Devices ###
+          - type: glance
+            title: People
+            show_name: false
+            column_width: calc(100%/2)
+            entities:
+              - device_tracker.heather
+              - device_tracker.justin_lewsader
+
+          ## Favorites ###
+          - type: glance
+            title: Favorites
+            column_width: calc(100%/3)
+            entities:
+              - entity: sensor.harmony_activity
+                name: LR TV
+                # tap_action: call-service
+                # service: input_select.select_next
+                # service_data:
+                #   entity_id: input_select.harmony
+              - entity: media_player.bedroom_directv
+                name: BR TV
+                icon: mdi:television
+              - entity: media_player.kids_room_directv
+                name: Kid's TV
+                icon: mdi:television
+
+          ## Scripts ###
+          - type: glance
+            column_width: calc(100%/3)
+            entities:
+              - entity: script.dinner_notify
+                name: Dinner Announcement
+                icon: mdi:food
+                tap_action: call-service
+                service: script.dinner_notify
+
+      - type: vertical-stack
+        cards:
+          ### Thermostat ###
           - type: entities
             entities:
               - entity: climate.thermostat
-                #name:
               - entity: sensor.thermostat_temperature
                 name: Indoor Temp.
               - entity: sensor.weather_temperature
