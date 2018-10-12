@@ -7,10 +7,12 @@ homeassistant:
   customize:
 
 group:
-
-input_number:
-
-input_select:
+  google_home:
+    name: Google Home Devices
+    entities:
+      - media_player.living_room__speaker
+      - media_player.kitchen_speaker
+      - media_player.googlehome0358
 
 ###############################################################################
 #                               Automations
@@ -25,5 +27,6 @@ script:
     sequence:
       - alias: Dinner Announcement
         service: tts.google_say
+        entity_id: group.google_home
         data:
           message: 'Dinner is ready!'
