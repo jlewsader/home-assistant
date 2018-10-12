@@ -111,6 +111,9 @@ device_tracker:
     username: !secret icloud_user
     password: !secret icloud_password
 
+# Zwave
+zwave:
+
 # Zones
 zone:
   name: !secret zone_name
