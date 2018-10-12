@@ -43,8 +43,9 @@ views:
             icon: mdi:television
           - entity: script.dinner_notify
             name: Dinner Announcement
-            icon: food
-
+            icon: mdi:food
+            tap_action: call-service
+            service: script.dinner_notify
 
       ### Thermostat ###
       - type: vertical-stack
