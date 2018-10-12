@@ -41,6 +41,9 @@ views:
           - entity: media_player.kids_room_directv
             name: Kid's TV
             icon: mdi:television
+          - entity: script.dinner_notify
+            name: Dinner Announcement
+            icon: food
 
 
       ### Thermostat ###

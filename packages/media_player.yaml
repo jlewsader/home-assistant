@@ -1,6 +1,6 @@
 ###############################################################################
 #   @package        :   Media Player
-#   @description    :   
+#   @description    :
 #   @url            :
 ###############################################################################
 homeassistant:
@@ -26,4 +26,4 @@ script:
       - alias: Dinner Announcement
         service: tts.google_say
         data:
-          message: 'Hey, it's dinner time!'
+          message: 'Dinner is ready!'
