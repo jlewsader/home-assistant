@@ -21,7 +21,7 @@ views:
           - type: entities
             title: Switches
             entities:
-              - switch.
+              - switch.ge_12722_onoff_relay_switch_switch # Fan Light
               - switch.
               - switch.
 
