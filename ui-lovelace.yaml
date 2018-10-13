@@ -21,7 +21,8 @@ views:
           - type: entities
             title: Switches
             entities:
-              - switch.ge_12722_onoff_relay_switch_switch # Fan Light
+              - entity: switch.ge_12722_onoff_relay_switch_switch # Fan Light
+                icon: mdi:lightbulb
               - switch.
               - switch.
 
