@@ -82,9 +82,8 @@ emulated_hue:
   expose_by_default: false
   # exposed_domains:
   #   - light
-  # entities:
-  #   light.
-  #     name:
+  entities:
+    switch.ge_12722_onoff_relay_switch_switch
 
 # Cast
 cast:
