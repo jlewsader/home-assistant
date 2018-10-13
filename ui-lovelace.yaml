@@ -17,6 +17,14 @@ views:
     cards:
       - type: vertical-stack
         cards:
+          ### Switches ###
+          - type: entities
+            title: Switches
+            entities:
+              - switch.
+              - switch.
+              - switch.
+
           ### Devices ###
           - type: glance
             title: People
