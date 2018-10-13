@@ -16,3 +16,12 @@ home-assistant.log
 known_devices.yaml
 life360.conf
 secrets.yaml
+OZW_Log.txt
+configurator.py
+icloud/
+options.xml
+pyozw.sqlite
+settings.conf
+zwcfg_0xf4ff9c27.xml
+zwscene.xml
+
