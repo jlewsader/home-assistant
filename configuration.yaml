@@ -78,12 +78,10 @@ tts:
 
 # Alexa
 emulated_hue:
-  #listen_port: 80
   expose_by_default: false
-  # exposed_domains:
-  #   - light
   entities:
-    switch.ge_12722_onoff_relay_switch_switch
+    switch.ge_12722_onoff_relay_switch_switch:
+      hidden: false
 
 # Cast
 cast:
