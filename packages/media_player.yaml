@@ -5,7 +5,7 @@
 ###############################################################################
 homeassistant:
   customize:
-    # Hide other Alexa account devices 
+    # Hide other Alexa account devices
     media_player.everywhere:
       hidden: true
     media_player.heathers_alexa_apps:
@@ -26,6 +26,11 @@ group:
       - media_player.living_room__speaker
       - media_player.kitchen_speaker
       - media_player.googlehome0358
+  echos:
+    name: Echo Devices
+    entities:
+      - media_player.echo
+      - media_player.dot
 
 media_player:
   - platform: alexa
