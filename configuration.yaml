@@ -76,6 +76,8 @@ tts:
 # Cloud
 #cloud:
 
+media_extractor:
+
 # Alexa
 emulated_hue:
   expose_by_default: false
