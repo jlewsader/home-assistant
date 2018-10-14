@@ -19,6 +19,11 @@ media_player:
     email: !secret amazon_email
     password: !secret amazon_password
     url: amazon.com
+    # TODO
+  # - platform: samsungtv
+  #   host:
+  #   name: Bedroom TV
+  #   mac:
 
 ###############################################################################
 #                               Automations
