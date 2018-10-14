@@ -11,6 +11,8 @@ homeassistant:
       friendly_name: Recessed Lights
     light.ge_12730_fan_control_switch_level:
       friendly_name: Fan
+    fan.ge_12730_fan_control_switch_level:
+      friendly_name: Fan
 #group:
 
 ###############################################################################

@@ -88,6 +88,8 @@ emulated_hue:
       hidden: false
     light.ge_12730_fan_control_switch_level:
       hidden: false
+    fan.ge_12730_fan_control_switch_level:
+      hidden: false
 
 
 # Cast
