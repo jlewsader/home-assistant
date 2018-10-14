@@ -73,5 +73,6 @@ script:
       - alias: Play K105
         service: media_extractor.play_media
         entity_id: media_player.living_room__speaker
-        media_content_id: http://54.82.44.170/neuhoffcomm-wkoafmaac-ibc3
-        media_content_type: music
+        data:
+          media_content_id: http://54.82.44.170/neuhoffcomm-wkoafmaac-ibc3
+          media_content_type: music
