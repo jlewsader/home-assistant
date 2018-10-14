@@ -5,6 +5,19 @@
 ###############################################################################
 homeassistant:
   customize:
+    # Hide other Alexa account devices 
+    media_player.everywhere:
+      hidden: true
+    media_player.heathers_alexa_apps:
+      hidden: true
+    media_player.justins_alexa_apps:
+      hidden: true
+    media_player.justins_fire:
+      hidden: true
+    media_player.justins_fire_tv_stick:
+      hidden: true
+    media_player.this_device:
+      hidden: true
 
 group:
   google_home:
