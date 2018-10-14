@@ -1,5 +1,5 @@
 ###############################################################################
-#   @package        :   Media Player
+#   @package        :   Media Players
 #   @description    :
 #   @url            :
 ###############################################################################
@@ -13,6 +13,12 @@ group:
       - media_player.living_room__speaker
       - media_player.kitchen_speaker
       - media_player.googlehome0358
+
+media_player:
+  - platform: alexa
+    email: !secret amazon_email
+    password: !secret amazon_password
+    url: amazon.com
 
 ###############################################################################
 #                               Automations
