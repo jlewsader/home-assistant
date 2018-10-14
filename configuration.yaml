@@ -84,6 +84,11 @@ emulated_hue:
   entities:
     switch.ge_12722_onoff_relay_switch_switch:
       hidden: false
+    light.ge_12724_3way_dimmer_switch_level:
+      hidden: false
+    light.ge_12730_fan_control_switch_level:
+      hidden: false
+
 
 # Cast
 cast:
