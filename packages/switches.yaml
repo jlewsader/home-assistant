@@ -7,7 +7,10 @@ homeassistant:
   customize:
     switch.ge_12722_onoff_relay_switch_switch:
       friendly_name: Fan Light
-
+    light.ge_12724_3way_dimmer_switch_level:
+      friendly_name: Recessed Lights
+    light.ge_12730_fan_control_switch_level:
+      friendly_name: Fan
 #group:
 
 ###############################################################################
