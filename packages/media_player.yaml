@@ -53,20 +53,24 @@ automation:
 ###############################################################################
 script:
   dinner_notify:
+    alias: Dinner Announcement
     sequence:
-      - alias: Dinner Announcement
-        service: tts.google_say
+      - service: tts.google_say
         entity_id: group.google_home
         data:
           message: 'Dinner is ready!'
-  #REVIEW This works! Make group with Echo's & Google's, etc.
-  alexa_test:
-    sequence:
-      # - alias: Dinner Announcement
-        service: media_player.alexa_tts
-        entity_id: media_player.echo
+      - service: media_player.alexa_tts
+        entity_id: group.echos
         data:
-          message: 'This is a test of the Echo TTS service.'
+          message: 'Dinner is ready!'
+  #REVIEW This works! Comment out, keep for testing
+  # alexa_test:
+  #   sequence:
+      # - alias: Dinner Announcement
+        # service: media_player.alexa_tts
+        # entity_id: media_player.echo
+        # data:
+        #   message: 'This is a test of the Echo TTS service.'
   #TEMP Testing media_extractor script (radio station setup)
   radio_k105:
     sequence:
