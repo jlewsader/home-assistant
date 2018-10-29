@@ -118,10 +118,10 @@ device_tracker:
     password: !secret icloud_password
 
 # Zwave
-zwave:
-  usb_path: /dev/ttyACM1
-  network_key: !secret zwave_key
-  autoheal: true
+# zwave:
+#   usb_path: /dev/ttyACM1
+#   network_key: !secret zwave_key
+#   autoheal: true
 
 
 # Wink
