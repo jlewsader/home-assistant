@@ -67,7 +67,7 @@ sensor:
       - 'date'
 
 # iOS App
-ios:
+#ios:
 
 # Text to speech
 tts:
@@ -79,17 +79,17 @@ tts:
 media_extractor:
 
 # Alexa
-emulated_hue:
-  expose_by_default: false
-  entities:
-    switch.ge_12722_onoff_relay_switch_switch:
-      hidden: false
-    light.ge_12724_3way_dimmer_switch_level:
-      hidden: false
-    light.ge_12730_fan_control_switch_level:
-      hidden: false
-    fan.ge_12730_fan_control_switch_level:
-      hidden: false
+# emulated_hue:
+#   expose_by_default: false
+#   entities:
+#     switch.ge_12722_onoff_relay_switch_switch:
+#       hidden: false
+#     light.ge_12724_3way_dimmer_switch_level:
+#       hidden: false
+#     light.ge_12730_fan_control_switch_level:
+#       hidden: false
+#     fan.ge_12730_fan_control_switch_level:
+#       hidden: false
 
 
 # Cast
@@ -118,10 +118,10 @@ device_tracker:
     password: !secret icloud_password
 
 # Zwave
-zwave:
-  usb_path: /dev/ttyACM1
-  network_key: !secret zwave_key
-  autoheal: true
+# zwave:
+#   usb_path: /dev/ttyACM1
+#   network_key: !secret zwave_key
+#   autoheal: true
 
 # Zones
 zone:
