@@ -6,7 +6,7 @@
 homeassistant:
   customize:
 
-group: 
+group:
 
 sensor:
   - platform: xbox_live
