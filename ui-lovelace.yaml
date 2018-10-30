@@ -187,3 +187,18 @@ views:
         - device_tracker.justin_lewsader
         - device_tracker.heather
         - zone.home
+
+### Sensors ###
+  - title: Sensors
+    id: Sensors
+    icon: mdi:access-point
+    cards:
+      - type: entities
+        title: Leak Sensors
+        entities:
+          - entity: binary_sensor.basement_center_water_sensor_opened
+            name: Basement - Center
+            icon: mdi:water
+          - entity: binary_sensor.basement_se_water_sensor_opened
+            name: Basement - SE
+            icon: mdi:water
