@@ -126,7 +126,7 @@ device_tracker:
 
 # Wink
 wink:
-
+  local_control: true
 
 # Zones
 zone:

@@ -18,15 +18,15 @@ views:
       - type: vertical-stack
         cards:
           ### Switches ###
-          # - type: entities
-          #   title: Switches
-          #   entities:
-          #     - entity: light.ge_12724_3way_dimmer_switch_level # Recessed Light
-          #       icon: mdi:ceiling-light
-          #     - entity: fan.ge_12730_fan_control_switch_level # Fan Control
-          #       icon: mdi:fan
-          #     - entity: switch.ge_12722_onoff_relay_switch_switch # Fan Light
-          #       icon: mdi:lightbulb
+          - type: entities
+            title: Switches
+            entities:
+              - entity: light.recessed_lights # Recessed Light
+                icon: mdi:ceiling-light
+              - entity: light.fan # Fan Control
+                icon: mdi:fan
+              - entity: switch.fan_light # Fan Light
+                icon: mdi:lightbulb
 
           ### Devices ###
           - type: glance
