@@ -157,11 +157,12 @@ views:
       - type: entities
         title: Speakers
         entities:
-          - entity: media_player.kitchen_speaker
-            type: "custom:mini-media-player"
+          - media_player.kitchen_speaker
           - media_player.living_room__speaker
           - media_player.soundbar
           - media_player.googlehome0358
+          - media_player.echo
+          - media_player.dot
 
 ### Weather ###
   - title: Weather
