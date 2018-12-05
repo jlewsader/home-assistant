@@ -42,6 +42,9 @@ discovery:
 
 # mqtt
 mqtt:
+  broker: m15.cloudmqtt.com
+  port: 12223
+  username: ha
   password: !secret mqtt_password
   discovery: true
 
