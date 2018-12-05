@@ -19,10 +19,9 @@ views:
         type: vertical-stack
         cards:
           ### Switches ###
-          - type: glance
+          - type: entities
             title: Switches
-            id: switches
-            column_width: calc(100%/3)
+    #column_width: calc(100%/3)
             entities:
               - entity: light.recessed_lights # Recessed Light
                 icon: mdi:ceiling-light
@@ -32,6 +31,8 @@ views:
                 icon: mdi:lightbulb
               - entity: switch.christmas_tree
                 icon: mdi:pine-tree
+              - entity: light.fastled_light
+                icon: mdi:alarm-light
 
           ### Devices ###
           - type: glance
