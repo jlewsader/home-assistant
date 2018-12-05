@@ -38,7 +38,11 @@ panel_iframe:
     url: http://192.168.1.1
 
 # Discover some devices automatically
-#discovery:
+discovery:
+
+# mqtt
+mqtt:
+  discovery: true
 
 # HomeKit
 # homekit:

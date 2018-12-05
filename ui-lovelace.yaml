@@ -18,8 +18,10 @@ views:
       - type: vertical-stack
         cards:
           ### Switches ###
-          - type: entities
+          - type: glance
             title: Switches
+            id: switches
+            column_width: calc(100%/3)
             entities:
               - entity: light.recessed_lights # Recessed Light
                 icon: mdi:ceiling-light
@@ -27,6 +29,8 @@ views:
                 icon: mdi:fan
               - entity: switch.fan_light # Fan Light
                 icon: mdi:lightbulb
+              - entity: switch.christmas_tree
+                icon: mdi:pine-tree
 
           ### Devices ###
           - type: glance
@@ -40,6 +44,7 @@ views:
           ## Favorites ###
           - type: glance
             title: Favorites
+            id: favs
             column_width: calc(100%/3)
             entities:
               - entity: sensor.harmony_activity
@@ -57,6 +62,7 @@ views:
 
           ## Scripts ###
           - type: glance
+            id: scripts
             column_width: calc(100%/3)
             show_state: false
             entities:
