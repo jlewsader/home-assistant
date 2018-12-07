@@ -33,7 +33,7 @@ views:
                 icon: mdi:pine-tree
               - entity: light.fastled_light
                 icon: mdi:alarm-light
-              - entity: input_select.effects
+              # - entity: input_select.effects
 
           ### Devices ###
           - type: glance
