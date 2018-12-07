@@ -20,7 +20,7 @@ input_select:
       - fastled_random_twinkle
       - fastled_fireworks
       - fastled_flicker
-    initial: none
+    initial: Select Effect
     icon: mdi:flash-circle
 
 ###############################################################################
