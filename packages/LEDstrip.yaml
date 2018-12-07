@@ -1,0 +1,81 @@
+###############################################################################
+#   @package        :
+#   @description    :
+#   @url            :
+###############################################################################
+homeassistant:
+
+input_select:
+  effects:
+    name: LED Effects
+    options:
+      - Select Effect
+      - none
+      - random
+      - strobe
+      - flicker
+      - fastled_rainbow
+      - fastled_color_wipe
+      - fastled_scan
+      - fastled_twinkle
+      - fastled_random_twinkle
+      - fastled_fireworks
+      - fastled_flicker
+    initial: none
+    icon: mdi:flash-circle
+
+###############################################################################
+#                               Automations
+###############################################################################
+automation:
+  - alias: Start LED Effects
+    hide_entity: true
+    trigger:
+    - platform: state
+      entity_id: input_select.effects
+      from: 'Select Effect'
+    action:
+    - service: light.turn_on
+      entity_id: light.fastled_light
+      data_template:
+        effect: >
+          {% if is_state("input_select.effects", "random") %}
+            random
+          {% elif is_state("input_select.effects", "strobe") %}
+            strobe
+          {% elif is_state("input_select.effects", "flicker") %}
+            flicker
+          {% elif is_state("input_select.effects", "fastled_rainbow") %}
+            fastled_rainbow
+          {% elif is_state("input_select.effects", "fastled_color_wipe") %}
+            fastled_color_wipe
+          {% elif is_state("input_select.effects", "fastled_scan") %}
+            fastled_scan
+          {% elif is_state("input_select.effects", "fastled_twinkle") %}
+            fastled_twinkle
+          {% elif is_state("input_select.effects", "fastled_random_twinkle") %}
+            fastled_random_twinkle
+          {% elif is_state("input_select.effects", "fastled_fireworks") %}
+            fastled_fireworks
+          {% elif is_state("input_select.effects", "fastled_flicker") %}
+            fastled_flicker
+          {% else %}
+          {% endif %}
+    - service: input_select.select_option
+      entity_id: input_select.effects
+      data_template:
+        option: "Select Effect"
+
+  - alias: Stop LED Effects
+    hide_entity: true
+    trigger:
+    - platform: state
+      entity_id: input_select.effects
+      to: 'none'
+    action:
+    - service: light.turn_on
+      entity_id: light.fastled_light
+    - service: input_select.select_option
+      entity_id: input_select.effects
+      data_template:
+        option: "Select Effect"
