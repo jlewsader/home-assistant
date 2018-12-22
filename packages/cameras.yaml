@@ -1,0 +1,26 @@
+###############################################################################
+#   @package        :   Cameras
+#   @description    :
+#   @url            :
+###############################################################################
+homeassistant:
+  # customize:
+
+# group:
+
+android_ip_webcam:
+  - host: 192.168.43.1
+    name: Front Window
+    sensors:
+      - motion
+      - light
+      - video_connections
+    switches:
+      - night_vision
+      - video_recording
+    motion_sensor: true
+
+###############################################################################
+#                               Automations
+###############################################################################
+# automation:
