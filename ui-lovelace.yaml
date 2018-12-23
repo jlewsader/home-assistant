@@ -109,7 +109,22 @@ views:
           ### Forecast ###
           - type: weather-forecast
             entity: weather.forecast
-
+### Camera ###
+  - title: Cameras
+    id: cameras
+    icon: mdi:camera
+    cards:
+      - type: picture-glance
+        title: Front Window
+        entities: 
+          - binary_sensor.front_window_motion_active
+          - switch.front_window_night_vision
+        camera_image: camera.front_window
+      - type: history-graph
+        title: Front Motion
+        entities:
+          - binary_sensor.front_window_motion_active
+        hours_to_show: 12
 ### Media ###
   - title: Media
     id: media
