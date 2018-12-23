@@ -78,7 +78,7 @@ sensor:
       - 'date'
 
 # iOS App
-#ios:
+ios:
 
 # Text to speech
 tts:
