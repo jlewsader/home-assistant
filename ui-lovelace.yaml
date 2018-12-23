@@ -121,10 +121,10 @@ views:
           - switch.front_window_night_vision
         camera_image: camera.front_window
       - type: history-graph
-        title: Front Motion
+        title: Front Motion - Last 1 Hour
         entities:
           - binary_sensor.front_window_motion_active
-        hours_to_show: 12
+        hours_to_show: 1
 ### Media ###
   - title: Media
     id: media
