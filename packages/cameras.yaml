@@ -19,6 +19,7 @@ android_ip_webcam:
       - night_vision
       - video_recording
     motion_sensor: true
+    scan_interval: 5
 
 ###############################################################################
 #                               Automations
