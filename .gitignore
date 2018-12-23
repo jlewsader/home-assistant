@@ -1,3 +1,5 @@
+.ios.conf
+*.pem
 .wink.conf
 alexa_media.pickle
 settings.conf.save
