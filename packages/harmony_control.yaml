@@ -32,25 +32,7 @@ sensor:
     sensors:
       harmony_activity:
         friendly_name: 'Harmony Activity'
-        # value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
-        value_template: >-
-          {% if is_state("states.remote.harmony_hub.attributes.current_activity", "PowerOff") %}
-            Off
-          {% elif is_state("states.remote.harmony_hub.attributes.current_activity", "TV") %}
-            TV
-          {% elif is_state("states.remote.harmony_hub.attributes.current_activity", "Netflix") %}
-            Netflix
-          {% elif is_state("states.remote.harmony_hub.attributes.current_activity", "Fire TV") %}
-            Fire TV
-          {% elif is_state("states.remote.harmony_hub.attributes.current_activity", "Xbox") %}
-            Xbox
-          {% elif is_state("states.remote.harmony_hub.attributes.current_activity", "Record Player") %}
-            Record Player
-          {% elif is_state("states.remote.harmony_hub.attributes.current_activity", "Wii") %}
-            Wii
-          {% else %}
-            Unknown
-          {% endif %}
+        value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
         icon_template: >-
           {% if is_state("sensor.harmony_activity", "TV") %}
             mdi:television-classic
