@@ -25,15 +25,16 @@ views:
             entities:
               - entity: light.recessed_lights # Recessed Light
                 icon: mdi:ceiling-light
-              - entity: light.fan # Fan Control
-                icon: mdi:fan
-              - entity: switch.fan_light # Fan Light
-                icon: mdi:lightbulb
+              - fan.ge_12730_fan_control_switch_level_2 # Fan
+              - switch.ge_12722_onoff_relay_switch_switch_2 # Fan Light
+              # - entity: light.fan # Fan Control
+              #   icon: mdi:fan
+              # - entity: switch.fan_light # Fan Light
+              #   icon: mdi:lightbulb
               - entity: switch.christmas_tree
                 icon: mdi:pine-tree
               - entity: light.fastled_light
                 icon: mdi:alarm-light
-              # - entity: input_select.effects
 
           ### Devices ###
           - type: glance
@@ -116,7 +117,7 @@ views:
     cards:
       - type: picture-glance
         title: Front Window
-        entities: 
+        entities:
           - binary_sensor.front_window_motion_active
           - switch.front_window_night_vision
         camera_image: camera.front_window
