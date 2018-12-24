@@ -24,7 +24,7 @@ input_select:
       - Wii
       - Record Player
       - Power Off
-    initial: Select Input
+    initial: Select Activity
     icon: mdi:remote
 
 sensor:
