@@ -8,15 +8,15 @@ homeassistant:
 
 media_player:
   - platform: directv
-    host: 192.168.1.110
+    host: 192.168.43.50
     name: Living Room DirecTV
     device: 0
   - platform: directv
-    host: 192.168.1.110
+    host: 192.168.43.50
     name: Bedroom DirecTV
     device: 403DEC0C6CF2
   - platform: directv
-    host: 192.168.1.110
+    host: 192.168.43.50
     name: Kids Room DirecTV
     device: 403DEC0C603C
 
