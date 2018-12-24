@@ -64,13 +64,13 @@ automation:
     trigger:
     - platform: state
       entity_id: input_select.harmony
-      from: 'Select Input'
+      from: 'Select Activity'
     action:
     - service: remote.turn_on
       entity_id: remote.harmony_hub
       data_template:
         activity: >
-          {% if is_state("input_select.harmony", "TV") %}
+          {% if is_state("input_select.effects", "TV") %}
             22985196
           {% elif is_state("input_select.harmony", "Netflix") %}
             28656554
