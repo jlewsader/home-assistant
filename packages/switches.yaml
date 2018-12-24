@@ -5,9 +5,12 @@
 ###############################################################################
 homeassistant:
   customize:
-    light.fan:
+    fan.ge_12730_fan_control_switch_level_2:
       friendly_name: Fan
       icon: mdi:fan
+    switch.ge_12722_onoff_relay_switch_switch_2:
+      friendly_name: Fan Light
+      icon: mdi:lightbulb
 
 #group:
 
