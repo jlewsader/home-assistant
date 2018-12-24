@@ -16,15 +16,13 @@ input_select:
   harmony:
     name: Harmony Control
     options:
-      - Select Input
-      - Watch DirecTV
-      # - WatchFree
-      - Watch Netflix
-      - Watch a Movie
-      - Play Xbox One
-      - Listen to Music
-      - Cast
-      - Raspberry Pi
+      - Select Activity
+      - TV
+      - Netflix
+      - Xbox
+      - Fire TV
+      - Wii
+      - Record Player
       - Power Off
     initial: Select Input
     icon: mdi:remote
@@ -34,24 +32,28 @@ sensor:
     sensors:
       harmony_activity:
         friendly_name: 'Harmony Activity'
-        value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
-        icon_template: >-
-          {% if is_state("sensor.harmony_activity", "Watch DirecTV") %}
-            mdi:television-box
-          {% elif is_state("sensor.harmony_activity", "Watch Netflix") %}
-            mdi:netflix
-          {% elif is_state("sensor.harmony_activity", "Watch a Movie") %}
-            mdi:movie
-          {% elif is_state("sensor.harmony_activity", "Play Xbox One") %}
-            mdi:xbox
-          {% elif is_state("sensor.harmony_activity", "Listen to Music") %}
-            mdi:record-player
-          {% elif is_state("sensor.harmony_activity", "Cast") %}
-            mdi:cast
-          {% elif is_state("sensor.harmony_activity", "Raspberry Pi") %}
-            mdi:server
+        # value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
+        value_template: >-
+          {% if is_state("states.remote.harmony_hub.attributes.current_activity", "PowerOff") %}
+            Off
           {% else %}
-            mdi:monitor
+            {{ states.remote.harmony_hub.attributes.current_activity }}
+          {% endif %}
+        icon_template: >-
+          {% if is_state("sensor.harmony_activity", "TV") %}
+            mdi:television-classic
+          {% elif is_state("sensor.harmony_activity", "Netflix") %}
+            mdi:netflix
+          {% elif is_state("sensor.harmony_activity", "Fire TV") %}
+            mdi:amazon
+          {% elif is_state("sensor.harmony_activity", "Xbox") %}
+            mdi:xbox
+          {% elif is_state("sensor.harmony_activity", "Record Player") %}
+            mdi:record-player
+          {% elif is_state("sensor.harmony_activity", "Wii") %}
+            mdi:wii
+          {% else %}
+            mdi:television
           {% endif %}
 ###############################################################################
 #                               Automations
@@ -68,26 +70,24 @@ automation:
       entity_id: remote.harmony_hub
       data_template:
         activity: >
-          {% if is_state("input_select.harmony", "Watch DirecTV") %}
+          {% if is_state("input_select.harmony", "TV") %}
             22985196
-          {% elif is_state("input_select.harmony", "Watch Netflix") %}
+          {% elif is_state("input_select.harmony", "Netflix") %}
             28656554
-          {% elif is_state("input_select.harmony", "Watch a Movie") %}
-            22985982
-          {% elif is_state("input_select.harmony", "Play Xbox One") %}
+          {% elif is_state("input_select.harmony", "Xbox") %}
             22985907
-          {% elif is_state("input_select.harmony", "Listen to Music") %}
+          {% elif is_state("input_select.harmony", "Fire TV") %}
+            36395736
+          {% elif is_state("input_select.harmony", "Wii") %}
+            36381527
+          {% elif is_state("input_select.harmony", "Record Player") %}
             28806653
-          {% elif is_state("input_select.harmony", "Cast") %}
-            33003021
-          {% elif is_state("input_select.harmony", "Raspberry Pi") %}
-            35895838
           {% else %}
           {% endif %}
     - service: input_select.select_option
       entity_id: input_select.harmony
       data_template:
-        option: "Select Input"
+        option: "Select Activity"
 
   - alias: Stop Harmony Activity
     hide_entity: True
@@ -101,4 +101,4 @@ automation:
     - service: input_select.select_option
       entity_id: input_select.harmony
       data_template:
-        option: "Select Input"
+        option: "Select Activity"
