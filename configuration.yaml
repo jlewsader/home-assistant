@@ -127,10 +127,10 @@ device_tracker:
     show_as_state: places, driving, moving
 
 # Zwave
-# zwave:
-#   usb_path: /dev/ttyACM1
-#   network_key: !secret zwave_key
-#   autoheal: true
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_key
+  autoheal: true
 
 
 # Wink
